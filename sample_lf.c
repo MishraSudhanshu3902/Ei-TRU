@@ -1,5 +1,4 @@
 #include "sample.h"
-
 //Credits :https://homepage.cs.uiowa.edu/~dwjones/bcd/mod.shtml
 
 uint32_t mod6( uint32_t a ) {
@@ -65,7 +64,7 @@ void sample_fixed_type_lf(int *r, const unsigned char u[N3_SAMPLE_BYTES])
     }
 
 
-    for (i = 0; i<2*N; i++) s[i] |=  1;
+    for (i = 0; i<t; i++) s[i] |=  1;
         
     crypto_sort_int32(s,N3-1);
 
@@ -79,15 +78,15 @@ void sample_fixed_type_lf_t(int *r, const unsigned char u[T_SAMPLE_BYTES])
 {
 
 
-    int32_t s[2*N];
+    int32_t s[t];
     int i;
 
-    for (i = 0; i < (2*N); i++)
+    for (i = 0; i < (t); i++)
     {
         s[i] = (u[4*i+0]) + (u[4*i+1]<<8) + (u[4*i+2]<<16) + (u[4*i+3]<<24);
     }
 
-    for(int i = 0;i<2*N;i++){
+    for(int i = 0;i<t;i++){
         r[i] = mod6(s[i]);
     }
 
@@ -103,7 +102,7 @@ void sample_lf(Term* r,const unsigned char u[N3_SAMPLE_BYTES+T_SAMPLE_BYTES]){
 
     int map[6][2] = {{1,0},{-1,0},{0,1},{0,-1},{-1,-1},{1,1}};
 
-    int coeffValues[2*N];
+    int coeffValues[t];
 
     sample_fixed_type_lf_t(coeffValues,u+N3_SAMPLE_BYTES);
 

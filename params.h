@@ -8,6 +8,7 @@
 #define Q 1361
 #define p_ 2
 #define N3 3*N
+#define t 2*N
 // #define LOGQ
 #define N_SAMPLE_BYTES ((30*(N-1)+7)/8)
 #define N3_SAMPLE_BYTES ((30*(N3-1)+7)/8)

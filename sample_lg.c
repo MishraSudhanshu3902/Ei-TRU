@@ -48,7 +48,7 @@ void sample_fixed_type_lg(int *r, const unsigned char u[N3_SAMPLE_BYTES]){
         default:break;
     }
 
-    int S = (2*N)/3 * 3;
+    int S = (t)/3 * 3;
 
     for(int i = 0;i<S;i = i + 3){
 
